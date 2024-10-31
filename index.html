@@ -19,10 +19,10 @@
 
     <!-- Scripts -->
     <script type="text/javascript">window.liveSettings={api_key:"27f8904425a44b4da6bc066f2aa5e46f",
-      variables_parser: function(text, fn) {
+          variables_parser: function(text, fn) {
         
-        text = text.replace(/\${stepcount}/g, function(a, b) {
-            return a.replace(b, fn(b));
+        text = text.replace(/\${stepCount}/g, function(match) {
+          return fn(match);
         });
         return text;
     }
