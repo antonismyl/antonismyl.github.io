@@ -20,12 +20,12 @@
     <!-- Scripts -->
     <script type="text/javascript">window.liveSettings={api_key:"27f8904425a44b4da6bc066f2aa5e46f",
       variables_parser: function(text, fn) {
-                text = text.replace(/(s-href|aria-label)="([^"]*\$\{stepCount\}[^"]*)"/g, function(a, b, c) {
-                const variable = fn(c);
-		return a.replace(c, variable.replace("${stepCount}", "{{0}}"));
-                });
-                return text;
-            }
+        
+        text = text.replace(/\${stepcount}/g, function(a, b) {
+            return a.replace(b, fn(b));
+        });
+        return text;
+    }
         };
     </script>
     <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
